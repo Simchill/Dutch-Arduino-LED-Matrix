@@ -1,0 +1,1339 @@
+#include
+
+//hier geven we de LED matrix een naam en de I/O pinnen die hij kan besturen
+
+LedControl L = LedControl(12, 11, 10);
+
+//hier defineren we de potentiometers
+
+const int pot = 0;
+
+const int pot2 = 1;
+
+//hier zorgen we ervoor dat we de waardes van de potentiometer kunnen opslaan
+
+int potvalue;
+
+int potvalue2;
+
+ 
+
+void setup(){
+
+  //hier stellen we de led matrix in door hem uit te zetten daarna de intensiteit aan te passen en het geheugen te wissen
+
+  L.shutdown(0, false);
+
+  L.setIntensity(0, 4);
+
+  L.clearDisplay(0);
+
+}
+
+ 
+
+void loop(){
+
+  //hier zeggen we dat de Arduino de analoge poorten moet lezen voor waardes
+
+  potvalue = analogRead(pot);
+
+  //hier defineren we de waardes die de pot meter aan kan geven
+
+  potvalue = map(potvalue, 0, 1000, 0, 7);
+
+  potvalue2 = analogRead(pot2);
+
+  potvalue2 = map(potvalue2, 0, 1000, 0, 7);
+
+  //hier kijken we of beide waardes gelijk zijn aan 0 zo ja lampje 0,0 gaat aan
+
+  //wat hier dus eigenlijk staat is als 1 en 2 gelijk zijn aan 0 dan gaat 0,0 aan
+
+  if(potvalue == 0 && potvalue2 == 0){
+
+    int row = 0;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  //hier kijken we of een van die waardes niet 0 is als dat waar is gaat 0,0 uit
+
+  //dit proces blijven we de hele tijd herhalen totdat alle coördinaten zijn gedefinieerd
+
+  //wat hier staat is als 1 of 2 niet gelijk is aan 0 dan gaat 0,0 uit
+
+  if(potvalue != 0 || potvalue2 != 0){
+
+    int row = 0;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 0){
+
+    int row = 1;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 0){
+
+    int row = 1;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 0){
+
+    int row = 2;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 0){
+
+    int row = 2;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 0){
+
+    int row = 3;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 0){
+
+    int row = 3;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 0){
+
+    int row = 4;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 0){
+
+    int row = 4;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 0){
+
+    int row = 5;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 0){
+
+    int row = 5;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 0){
+
+    int row = 6;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 0){
+
+    int row = 6;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 0){
+
+    int row = 7;
+
+    int col = 0;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 0){
+
+    int row = 7;
+
+    int col = 0;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 1){
+
+    int row = 0;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 1){
+
+    int row = 0;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 1){
+
+    int row = 1;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 1){
+
+    int row = 1;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 1){
+
+    int row = 2;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 1){
+
+    int row = 2;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 1){
+
+    int row = 3;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 1){
+
+    int row = 3;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 1){
+
+    int row = 4;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 1){
+
+    int row = 4;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 1){
+
+    int row = 5;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 1){
+
+    int row = 5;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 1){
+
+    int row = 6;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 1){
+
+    int row = 6;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 1){
+
+    int row = 7;
+
+    int col = 1;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 1){
+
+    int row = 7;
+
+    int col = 1;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 2){
+
+    int row = 0;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 2){
+
+    int row = 0;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 2){
+
+    int row = 1;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 2){
+
+    int row = 1;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 2){
+
+    int row = 2;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 2){
+
+    int row = 2;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 2){
+
+    int row = 3;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 2){
+
+    int row = 3;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 2){
+
+    int row = 4;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 2){
+
+    int row = 4;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 2){
+
+    int row = 5;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 2){
+
+    int row = 5;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 2){
+
+    int row = 6;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 2){
+
+    int row = 6;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 2){
+
+    int row = 7;
+
+    int col = 2;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 2){
+
+    int row = 7;
+
+    int col = 2;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 3){
+
+    int row = 0;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 3){
+
+    int row = 0;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 3){
+
+    int row = 1;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 3){
+
+    int row = 1;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 3){
+
+    int row = 2;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 3){
+
+    int row = 2;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 3){
+
+    int row = 3;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 3){
+
+    int row = 3;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 3){
+
+    int row = 4;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 3){
+
+    int row = 4;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 3){
+
+    int row = 5;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 3){
+
+    int row = 5;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 3){
+
+    int row = 6;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 3){
+
+    int row = 6;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 3){
+
+    int row = 7;
+
+    int col = 3;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 3){
+
+    int row = 7;
+
+    int col = 3;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 4){
+
+    int row = 0;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 4){
+
+    int row = 0;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 4){
+
+    int row = 1;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 4){
+
+    int row = 1;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 4){
+
+    int row = 2;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 4){
+
+    int row = 2;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 4){
+
+    int row = 3;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 4){
+
+    int row = 3;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 4){
+
+    int row = 4;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 4){
+
+    int row = 4;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 4){
+
+    int row = 5;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 4){
+
+    int row = 5;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 4){
+
+    int row = 6;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 4){
+
+    int row = 6;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 4){
+
+    int row = 7;
+
+    int col = 4;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 4){
+
+    int row = 7;
+
+    int col = 4;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 5){
+
+    int row = 0;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 5){
+
+    int row = 0;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 5){
+
+    int row = 1;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 5){
+
+    int row = 1;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 5){
+
+    int row = 2;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 5){
+
+    int row = 2;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 5){
+
+    int row = 3;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 5){
+
+    int row = 3;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 5){
+
+    int row = 4;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 5){
+
+    int row = 4;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 5){
+
+    int row = 5;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 5){
+
+    int row = 5;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 5){
+
+    int row = 6;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 5){
+
+    int row = 6;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 5){
+
+    int row = 7;
+
+    int col = 5;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 5){
+
+    int row = 7;
+
+    int col = 5;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 6){
+
+    int row = 0;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 6){
+
+    int row = 0;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 6){
+
+    int row = 1;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 6){
+
+    int row = 1;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 6){
+
+    int row = 2;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 6){
+
+    int row = 2;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 6){
+
+    int row = 3;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 6){
+
+    int row = 3;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 6){
+
+    int row = 4;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 6){
+
+    int row = 4;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 6){
+
+    int row = 5;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 6){
+
+    int row = 5;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 6){
+
+    int row = 6;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 6){
+
+    int row = 6;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 6){
+
+    int row = 7;
+
+    int col = 6;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 6){
+
+    int row = 7;
+
+    int col = 6;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 0 && potvalue2 == 7){
+
+    int row = 0;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 0 || potvalue2 != 7){
+
+    int row = 0;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+  if(potvalue == 1 && potvalue2 == 7){
+
+    int row = 1;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 1 || potvalue2 != 7){
+
+    int row = 1;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 2 && potvalue2 == 7){
+
+    int row = 2;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 2 || potvalue2 != 7){
+
+    int row = 2;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 3 && potvalue2 == 7){
+
+    int row = 3;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 3 || potvalue2 != 7){
+
+    int row = 3;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 4 && potvalue2 == 7){
+
+    int row = 4;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 4 || potvalue2 != 7){
+
+    int row = 4;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 5 && potvalue2 == 7){
+
+    int row = 5;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 5 || potvalue2 != 7){
+
+    int row = 5;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 6 && potvalue2 == 7){
+
+    int row = 6;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 6 || potvalue2 != 7){
+
+    int row = 6;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+    if(potvalue == 7 && potvalue2 == 7){
+
+    int row = 7;
+
+    int col = 7;
+
+    L.setLed(0, row, col, true);
+
+  }
+
+  if(potvalue != 7 || potvalue2 != 7){
+
+    int row = 7;
+
+    int col = 7;
+
+    L.setLed(0, row, col, false);
+
+  }
+
+}
